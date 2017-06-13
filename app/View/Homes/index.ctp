@@ -3,9 +3,16 @@
     <div class="row">
         <div class="grid_2">
             <?php
-                echo $this->Html->image('page1_pic1.jpg', array(
-                    'alt' => 'image1',
-                ));
+                echo $this->Html->link(
+                    $this->Html->image('page1_pic1.jpg', array(
+                        'alt' => 'image1',
+                    )), array(
+                        'controller' => 'movies',
+                        'action' => 'view', '1'
+                    ), array(
+                        'escape' => false,
+                    )
+                );
             ?>
             <p class="txt2"><a href="#">Homefront</a></p>
             <p class="txt3">(2013)</p>

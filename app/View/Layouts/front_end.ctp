@@ -11,10 +11,12 @@
             echo $this->Html->css(array(
                 '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
                 'style',
+                'custom',
             ));
 
             echo $this->Html->script(array(
                 '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js',
+                '//content.jwplatform.com/libraries/XeGdlzmk.js',
                 'jquery-migrate-1.2.1',
                 'jquery.easing.1.3',
                 'scroll_to_top',
@@ -91,6 +93,7 @@
                 <?php echo $this->element('Menu/front_end_menu'); ?>
 
                 <!--content-->
+                <?php if ($this->request->controller === 'homes') : ?>
                 <div class="container">
                     <div class="header-box">
                         <div id="owl" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
@@ -123,6 +126,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endif; ?>
                 <div class="container">
                     <?php echo $this->Flash->render(); ?>
                     <?php echo $this->fetch('content'); ?>
